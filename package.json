@@ -12,6 +12,7 @@
     "gatsby-plugin-feed": "^4.15.1",
     "gatsby-plugin-gatsby-cloud": "^4.15.0",
     "gatsby-plugin-google-analytics": "^4.15.0",
+    "gatsby-plugin-google-gtag": "^4.15.0",
     "gatsby-plugin-image": "^2.15.1",
     "gatsby-plugin-manifest": "^4.15.1",
     "gatsby-plugin-offline": "^5.15.1",
@@ -34,6 +35,10 @@
   },
   "devDependencies": {
     "prettier": "^2.6.2"
+  },
+  "engines": {
+    "node": "~14.19.3",
+    "npm": "~6.14.17"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
