@@ -140,6 +140,11 @@ module.exports = {
         trackingIds: [
           process.env.GA_MEASUREMENT_ID, // Google Analytics / GA
         ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // When enabled, Google Global Site Tag will not be loaded at all for visitors that have “Do Not Track” enabled
+          respectDNT: true,
+        },
       },
     },
   ],
