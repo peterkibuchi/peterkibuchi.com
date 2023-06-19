@@ -1,16 +1,24 @@
 import Link from "next/link";
+import { format, parseISO } from "date-fns";
 
 import { allPosts } from "~/.contentlayer/generated";
 
 export default function Home() {
   return (
-    <div className="prose dark:prose-invert">
+    <div className="prose my-12 dark:prose-invert">
       {allPosts.map((post) => (
         <article key={post._id}>
-          <Link href={post.slug}>
-            <h2>{post.title}</h2>
+          <Link
+            href={post.slug}
+            className="-mx-2 flex flex-row justify-between rounded-md px-2 py-2 font-normal no-underline transition-all duration-200 hover:bg-gray-200 dark:hover:bg-gray-800"
+          >
+            <span className="text-secondary mr-2 flex-grow truncate">
+              {post.title}
+            </span>
+            <span className="flex-shrink-0 self-center text-sm text-slate-400 dark:text-slate-500">
+              {format(parseISO(post.date), "MMMM yyyy")}
+            </span>
           </Link>
-          {post.description && <p>{post.description}</p>}
         </article>
       ))}
     </div>
