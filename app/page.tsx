@@ -15,7 +15,7 @@ export default function Home() {
             <span className="text-secondary mr-2 flex-grow truncate">
               {post.title}
             </span>
-            <span className="flex-shrink-0 self-center text-sm text-slate-400 dark:text-slate-500">
+            <span className="flex-shrink-0 self-center text-sm text-gray-400 dark:text-gray-500">
               {format(parseISO(post.date), "MMMM yyyy")}
             </span>
           </Link>

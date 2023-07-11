@@ -1,10 +1,9 @@
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
 
 import "~/app/globals.css";
 
-import { Analytics, Footer, ModeToggle, ThemeProvider } from "~/components";
+import { Analytics, Footer, Navbar, ThemeProvider } from "~/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -60,14 +59,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-auto flex min-h-screen max-w-2xl flex-col px-4 pt-10">
             <header>
-              <div className="flex items-center justify-between">
-                <ModeToggle />
-
-                <nav className="ml-auto space-x-6 text-sm font-medium">
-                  <Link href="/">Home</Link>
-                  <Link href="/about">About</Link>
-                </nav>
-              </div>
+              <Navbar />
             </header>
 
             <main className="flex-1">{children}</main>
