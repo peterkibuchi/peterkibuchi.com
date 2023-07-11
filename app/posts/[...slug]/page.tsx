@@ -54,7 +54,8 @@ export default function PostPage({ params }: PostProps) {
           {post.description}
         </p>
       )}
-      <hr className="my-4" />
+
+      <hr className="my-6" />
       <Mdx code={post.body.code} />
     </article>
   );

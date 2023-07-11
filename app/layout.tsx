@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "~/app/globals.css";
 
 import { Analytics, Footer, Navbar, ThemeProvider } from "~/components";
+import { siteConfig } from "~/config/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,16 +14,21 @@ interface RootLayoutProps {
 
 export const metadata: Metadata = {
   title: {
-    default: "Peter Kibuchi",
-    template: "%s | Peter Kibuchi",
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  authors: [{ name: "Peter Kibuchi", url: "https://www.peterkibuchi.com" }],
+  authors: [
+    {
+      name: "Peter Kibuchi",
+      url: siteConfig.links.github,
+    },
+  ],
   creator: "Peter Kibuchi",
-  description: "Software Engineer.",
+  description: siteConfig.description,
   icons: {
-    // apple: "/static/favicons/apple-touch-icon-180x180.png",
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
+    // apple: "/apple-touch-icon-180x180.png",
   },
   keywords: [
     "JavaScript",
@@ -37,17 +43,24 @@ export const metadata: Metadata = {
     "peterkibuchi.com",
   ],
   openGraph: {
-    description: "Software Engineer.",
+    description: siteConfig.description,
     locale: "en-US",
-    siteName: "Peter Kibuchi",
-    title: "Peter Kibuchi",
+    siteName: siteConfig.name,
+    title: siteConfig.name,
     type: "website",
-    url: "https://www.peterkibuchi.com",
+    url: siteConfig.url,
   },
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    // images: [`${siteConfig.url}/og.jpg`],
+    // creator: "@example",
+  },
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {

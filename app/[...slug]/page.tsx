@@ -48,9 +48,14 @@ export default function PagePage({ params }: PageProps) {
 
   return (
     <article className="prose py-6 dark:prose-invert">
-      <h1>{page.title}</h1>
-      {page.description && <p className="text-xl">{page.description}</p>}
-      <hr />
+      <h1 className="mb-2">{page.title}</h1>
+      {page.description && (
+        <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
+          {page.description}
+        </p>
+      )}
+
+      <hr className="my-6" />
       <Mdx code={page.body.code} />
     </article>
   );
