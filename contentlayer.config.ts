@@ -3,6 +3,8 @@ import {
   makeSource,
   type ComputedFields,
 } from "contentlayer/source-files";
+import rehypePrettyCode from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 
 const computedFields: ComputedFields = {
   slug: {
@@ -54,4 +56,8 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "./content",
   documentTypes: [Post, Page],
+  mdx: {
+    rehypePlugins: [[rehypePrettyCode, { theme: "poimandres" }]],
+    remarkPlugins: [remarkGfm],
+  },
 });
