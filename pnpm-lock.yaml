@@ -36,7 +36,7 @@ devDependencies:
     version: 4.0.2(prettier@2.8.8)
   '@tailwindcss/typography':
     specifier: ^0.5.9
-    version: 0.5.9(tailwindcss@3.3.2)
+    version: 0.5.9(tailwindcss@3.3.3)
   '@types/eslint':
     specifier: ^8.44.0
     version: 8.44.0
@@ -83,8 +83,8 @@ devDependencies:
     specifier: ^3.0.1
     version: 3.0.1
   tailwindcss:
-    specifier: 3.3.2
-    version: 3.3.2
+    specifier: 3.3.3
+    version: 3.3.3
   typescript:
     specifier: 5.1.6
     version: 5.1.6
@@ -1237,7 +1237,7 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@tailwindcss/typography@0.5.9(tailwindcss@3.3.2):
+  /@tailwindcss/typography@0.5.9(tailwindcss@3.3.3):
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -1246,7 +1246,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
     dev: true
 
   /@types/acorn@4.0.6:
@@ -4471,7 +4471,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.25
-      yaml: 2.2.2
+      yaml: 2.3.1
     dev: true
 
   /postcss-nested@6.0.1(postcss@8.4.25):
@@ -5084,8 +5084,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /tailwindcss@3.3.2:
-    resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
+  /tailwindcss@3.3.3:
+    resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -5109,7 +5109,6 @@ packages:
       postcss-load-config: 4.0.1(postcss@8.4.25)
       postcss-nested: 6.0.1(postcss@8.4.25)
       postcss-selector-parser: 6.0.12
-      postcss-value-parser: 4.2.0
       resolve: 1.22.2
       sucrase: 3.32.0
     transitivePeerDependencies:
@@ -5453,15 +5452,9 @@ packages:
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
-  /yaml@2.2.2:
-    resolution: {integrity: sha512-CBKFWExMn46Foo4cldiChEzn7S7SRV+wqiluAb6xmueD/fGyRHIhX8m14vVGgeFWjN540nKCNVj6P21eQjgTuA==}
-    engines: {node: '>= 14'}
-    dev: true
-
   /yaml@2.3.1:
     resolution: {integrity: sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==}
     engines: {node: '>= 14'}
-    dev: false
 
   /yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
