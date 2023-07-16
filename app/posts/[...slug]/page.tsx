@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { allPosts } from "contentlayer/generated";
+import { format, parseISO } from "date-fns";
 
 import { Mdx } from "~/components";
 
@@ -50,10 +51,14 @@ export default function PostPage({ params }: PostProps) {
     <article className="prose py-6 dark:prose-invert">
       <h1 className="mb-2">{post.title}</h1>
       {post.description && (
-        <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
+        <p className="my-0 text-xl text-slate-700 dark:text-slate-200">
           {post.description}
         </p>
       )}
+
+      <div className="mt-4 text-sm">
+        <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
+      </div>
 
       <hr className="my-6" />
       <Mdx code={post.body.code} />
