@@ -37,7 +37,7 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "postcss": "8.4.26",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "rehype-pretty-code": "^0.10.0",
     "remark-gfm": "^3.0.1",
