@@ -23,14 +23,14 @@
     }
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.js",
     "**/*.cjs",
     "**/*.mjs",
+    ".contentlayer/generated",
+    ".eslintrc.cjs",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
+    "next-env.d.ts"
   ],
   "exclude": ["node_modules"]
 }
