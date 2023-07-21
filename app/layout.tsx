@@ -26,22 +26,11 @@ export const metadata: Metadata = {
   creator: "Peter Kibuchi",
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    icon: "/android-chrome-192x192.png",
     shortcut: "/favicon.ico",
-    // apple: "/apple-touch-icon-180x180.png",
   },
-  keywords: [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "TailwindCSS",
-    "Engineering",
-    "Frontend",
-    "Developer",
-    "Software",
-    "peterkibuchi.com",
-  ],
+  keywords: siteConfig.keywords,
   openGraph: {
     description: siteConfig.description,
     locale: "en-US",
@@ -61,6 +50,7 @@ export const metadata: Metadata = {
     // images: [`${siteConfig.url}/og.jpg`],
     // creator: "@example",
   },
+  metadataBase: new URL("https://peterkibuchi.vercel.app"),
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
