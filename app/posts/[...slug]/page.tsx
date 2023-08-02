@@ -12,7 +12,9 @@ interface PostProps {
 
 function getPostFromParams(params: PostProps["params"]) {
   const slug = params?.slug?.join("/");
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+  const post = allPosts
+    .filter((post) => post.published)
+    .find((post) => post.slugAsParams === slug);
 
   if (!post) {
     null;

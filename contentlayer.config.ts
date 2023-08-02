@@ -29,6 +29,10 @@ export const Page = defineDocumentType(() => ({
     description: {
       type: "string",
     },
+    published: {
+      type: "boolean",
+      default: true,
+    },
   },
   computedFields,
 }));
@@ -49,13 +53,17 @@ export const Post = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    published: {
+      type: "boolean",
+      default: true,
+    },
   },
   computedFields,
 }));
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Post, Page],
+  documentTypes: [Page, Post],
   mdx: {
     rehypePlugins: [[rehypePrettyCode, { theme: "poimandres" }]],
     remarkPlugins: [remarkGfm],
