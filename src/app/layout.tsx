@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import "~/app/globals.css";
+import "~/styles/globals.css";
 
 import { Analytics, Footer, Navbar, ThemeProvider } from "~/components";
 import { siteConfig } from "~/config/site";

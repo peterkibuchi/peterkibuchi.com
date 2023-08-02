@@ -1,7 +1,6 @@
 import Link from "next/link";
+import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
-
-import { allPosts } from "~/.contentlayer/generated";
 
 export default function Home() {
   return (
