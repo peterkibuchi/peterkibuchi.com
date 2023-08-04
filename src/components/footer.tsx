@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+import { buttonVariants } from "~/components/ui/button";
+import { footerItems } from "~/config/footer";
+
 export function Footer() {
   return (
     <div className="mx-auto mt-12 max-w-2xl border-t border-gray-300 py-4 text-sm dark:border-gray-500">
@@ -8,21 +11,18 @@ export function Footer() {
           Copyright © {new Date().getFullYear()} Peter Kibuchi.
         </span>
 
-        <div className="text-primary ml-auto space-x-6 text-sm">
-          <Link
-            href="https://github.com/peterkibuchi"
-            target="_blank"
-            referrerPolicy="no-referrer"
-          >
-            GitHub
-          </Link>
-          <Link
-            href="https://linkedin.com/in/peterkibuchi"
-            target="_blank"
-            referrerPolicy="no-referrer"
-          >
-            LinkedIn
-          </Link>
+        <div className="ml-auto text-sm text-primary">
+          {footerItems.map((item, index) => (
+            <Link
+              key={index}
+              href={item.disabled ? "#" : item.href}
+              target="_blank"
+              referrerPolicy="no-referrer"
+              className={buttonVariants({ variant: "ghost" })}
+            >
+              {item.title}
+            </Link>
+          ))}
         </div>
       </div>
     </div>
