@@ -4,7 +4,13 @@ import LocalFont from "next/font/local";
 
 import "~/styles/globals.css";
 
-import { Analytics, Footer, Navbar, ThemeProvider } from "~/components";
+import {
+  Analytics,
+  Footer,
+  Navbar,
+  TailwindIndicator,
+  ThemeProvider,
+} from "~/components";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
 
@@ -86,6 +92,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
 
           <Analytics />
+          <TailwindIndicator />
         </ThemeProvider>
       </body>
     </html>
