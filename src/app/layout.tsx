@@ -1,12 +1,21 @@
 import { type Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
+import LocalFont from "next/font/local";
 
 import "~/styles/globals.css";
 
 import { Analytics, Footer, Navbar, ThemeProvider } from "~/components";
 import { siteConfig } from "~/config/site";
+import { cn } from "~/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+const fontHeading = LocalFont({
+  src: "../styles/CalSans-SemiBold.woff2",
+  variable: "--font-heading",
+});
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -57,7 +66,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`min-h-screen bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50 ${inter.className}`}
+        className={cn(
+          "min-h-screen bg-background bg-white font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50",
+          fontSans.variable,
+          fontHeading.variable,
+        )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-auto flex min-h-screen max-w-2xl flex-col px-4 pt-10">
