@@ -2,6 +2,8 @@ type SiteConfig = {
   name: string;
   url: string;
   description: string;
+  creator: string;
+  authors: { name: string; url: string }[];
   keywords: string[];
   ogImage?: string;
   links: {
@@ -13,6 +15,9 @@ type SiteConfig = {
 export const siteConfig: SiteConfig = {
   name: "Peter Kibuchi",
   url: "https://www.peterkibuchi.com",
+  description: "Ideas and musings by Peter Kibuchi.",
+  creator: "Peter Kibuchi",
+  authors: [{ name: "Peter Kibuchi", url: "https://www.peterkibuchi.com" }],
   keywords: [
     "JavaScript",
     "TypeScript",
@@ -25,7 +30,6 @@ export const siteConfig: SiteConfig = {
     "Software",
     "peterkibuchi.com",
   ],
-  description: "Ideas and musings by Peter Kibuchi.",
   links: {
     github: "https://github.com/peterkibuchi",
   },

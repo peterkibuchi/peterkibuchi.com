@@ -32,27 +32,31 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
-  authors: [
-    {
-      name: "Peter Kibuchi",
-      url: siteConfig.links.github,
-    },
-  ],
-  creator: "Peter Kibuchi",
   description: siteConfig.description,
+  creator: siteConfig.creator,
+  authors: siteConfig.authors,
+  keywords: siteConfig.keywords,
   icons: {
     apple: "/apple-touch-icon.png",
     icon: "/android-chrome-192x192.png",
     shortcut: "/favicon.ico",
   },
-  keywords: siteConfig.keywords,
+  // manifest: `${siteConfig.url}/site.webmanifest`,
   openGraph: {
-    description: siteConfig.description,
-    locale: "en-US",
-    siteName: siteConfig.name,
     title: siteConfig.name,
-    type: "website",
+    description: siteConfig.description,
+    siteName: siteConfig.name,
     url: siteConfig.url,
+    type: "website",
+    locale: "en-US",
+    // images: [
+    //   {
+    //     url: siteConfig.ogImage,
+    //     width: 1200,
+    //     height: 630,
+    //     alt: siteConfig.name,
+    //   },
+    // ],
   },
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -65,7 +69,7 @@ export const metadata: Metadata = {
     // images: [`${siteConfig.url}/og.jpg`],
     // creator: "@example",
   },
-  metadataBase: new URL("https://peterkibuchi.vercel.app"),
+  metadataBase: new URL(siteConfig.url),
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
