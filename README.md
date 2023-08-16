@@ -37,25 +37,25 @@ To run it locally, follow the steps below:
 
 1. Clone repository and install the dependencies:
 
-```bash
-# Clone repository
-git clone git@github.com:peterkibuchi/shreddit.git
+   ```bash
+   # Clone repository
+   git clone git@github.com:peterkibuchi/shreddit.git
 
-# Install dependencies
-pnpm i
-```
+   # Install dependencies
+   pnpm i
+   ```
 
 2. Generate Contentlayer types and documents.
 
-```bash
-pnpm contentlayer build
-```
+   ```bash
+   pnpm contentlayer build
+   ```
 
 3. Start the development server:
 
-```bash
-pnpm dev
-```
+   ```bash
+   pnpm dev
+   ```
 
 ## Room for Improvement
 
