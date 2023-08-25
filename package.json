@@ -21,7 +21,7 @@
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
-    "next": "13.4.16",
+    "next": "13.4.19",
     "next-contentlayer": "^0.3.4",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
@@ -32,15 +32,15 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/eslint": "^8.44.2",
-    "@types/node": "18.17.5",
+    "@types/node": "18.17.11",
     "@types/prettier": "^2.7.3",
-    "@types/react": "18.2.20",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "autoprefixer": "10.4.15",
     "eslint": "8.47.0",
-    "eslint-config-next": "13.4.16",
+    "eslint-config-next": "13.4.19",
     "postcss": "8.4.28",
     "prettier": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3",
@@ -48,6 +48,6 @@
     "remark-gfm": "^3.0.1",
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.6",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   }
 }
