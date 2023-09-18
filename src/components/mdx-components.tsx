@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
+import { Callout } from "~/components/callout";
 import { cn } from "~/lib/utils";
 
 interface MdxProps {
@@ -144,6 +145,7 @@ const components = {
     <code className={cn("font-mono text-xs", className)} {...props} />
   ),
   Image,
+  Callout,
 };
 
 export function Mdx({ code }: MdxProps) {
