@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^8.56.5
     version: 8.56.5
   '@types/node':
-    specifier: 20.11.27
-    version: 20.11.27
+    specifier: 20.11.28
+    version: 20.11.28
   '@types/prettier':
     specifier: ^2.7.3
     version: 2.7.3
@@ -750,7 +750,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.7.7
-      '@types/node': 20.11.27
+      '@types/node': 20.11.28
     dev: false
 
   /@grpc/proto-loader@0.7.7:
@@ -1393,8 +1393,8 @@ packages:
   /@types/ms@0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node@20.11.27:
-    resolution: {integrity: sha512-qyUZfMnCg1KEz57r7pzFtSGt49f6RPkPBis3Vo4PbS7roQEDn22hiHzl/Lo1q4i4hDEgBJmBF/NTNg2XR0HbFg==}
+  /@types/node@20.11.28:
+    resolution: {integrity: sha512-M/GPWVS2wLkSkNHVeLkrF2fD5Lx5UC4PxA0uZcKc6QqbIQUJyW1jVjueJYi1z8n0I5PxYrtpnPnWglE+y9A0KA==}
     dependencies:
       undici-types: 5.26.5
 
@@ -5217,7 +5217,7 @@ packages:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.11.27
+      '@types/node': 20.11.28
       long: 5.2.3
     dev: false
 
