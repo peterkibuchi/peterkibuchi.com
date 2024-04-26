@@ -2,7 +2,7 @@
   "name": "peterkibuchi.com",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@9.0.6",
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -49,5 +49,6 @@
     "tailwindcss": "3.4.3",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.4.5"
-  }
+  },
+  "packageManager": "pnpm@9.0.6"
 }
