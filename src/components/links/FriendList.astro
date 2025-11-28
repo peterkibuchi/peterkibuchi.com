@@ -89,9 +89,7 @@ const getAvatarSrc = (friend: friend) =>
               {/* details */}
               <div class="flex flex-col gap-y-1">
                 <p class="my-0 line-clamp-1 text-sm">{frd.name} </p>
-                <p class="my-0 line-clamp-1 text-xs text-muted-foreground">
-                  {frd.intro}
-                </p>
+                <p class="my-0 line-clamp-1 text-xs text-muted-foreground">{frd.intro}</p>
               </div>
             </div>
             {/* avatar bg */}
@@ -103,8 +101,7 @@ const getAvatarSrc = (friend: friend) =>
               alt="avatar bg"
               loading="lazy"
               style={{
-                maskImage:
-                  "linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)",
+                maskImage: "linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)",
                 msMaskImage:
                   "-ms-linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)",
                 WebkitMaskImage:

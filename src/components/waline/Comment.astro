@@ -32,12 +32,8 @@ const { class: className } = Astro.props;
 
     connectedCallback() {
       // Prevent Vue log errors
-      (
-        globalThis as unknown as { __VUE_OPTIONS_API__: boolean }
-      ).__VUE_OPTIONS_API__ = true;
-      (
-        globalThis as unknown as { __VUE_PROD_DEVTOOLS__: boolean }
-      ).__VUE_PROD_DEVTOOLS__ = false;
+      (globalThis as unknown as { __VUE_OPTIONS_API__: boolean }).__VUE_OPTIONS_API__ = true;
+      (globalThis as unknown as { __VUE_PROD_DEVTOOLS__: boolean }).__VUE_PROD_DEVTOOLS__ = false;
       (
         globalThis as unknown as {
           __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: boolean;
@@ -45,8 +41,7 @@ const { class: className } = Astro.props;
       ).__VUE_PROD_HYDRATION_MISMATCH_DETAILS__ = false;
 
       const emoji = walineConfig.emoji?.map(
-        (preset) =>
-          `${config.npmCDN}/@waline/emojis@1.2.0/${preset}` as WalineEmojiPresets,
+        (preset) => `${config.npmCDN}/@waline/emojis@1.2.0/${preset}` as WalineEmojiPresets,
       );
 
       walineInit({
@@ -102,15 +97,7 @@ const { class: className } = Astro.props;
   }
 
   /* Fix long text and links overflow */
-  #waline
-    :global(
-      .wl-content,
-      .wl-text,
-      .wl-comment-text,
-      .wl-item,
-      .wl-card-item,
-      a
-    ) {
+  #waline :global(.wl-content, .wl-text, .wl-comment-text, .wl-item, .wl-card-item, a) {
     max-width: 100%;
   }
   #waline :global(.wl-meta, .wl-content, .wl-text, .wl-comment-text) {

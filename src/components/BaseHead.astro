@@ -9,48 +9,22 @@ const { articleDate, description, ogImage, title } = Astro.props;
 
 const siteTitle = `${title} ${config.titleDelimiter} ${config.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL(
-  ogImage ? ogImage : "/images/social-card.png",
-  Astro.url,
-).href;
+const socialImageURL = new URL(ogImage ? ogImage : "/images/social-card.png", Astro.url).href;
 ---
 
 <meta charset="utf-8" />
-<meta
-  content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-  name="viewport"
-/>
+<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
 <title>{siteTitle}</title>
 
 {/* Icons / Favicon */}
-<link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  href="/favicon/apple-touch-icon.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="/favicon/favicon-32x32.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="/favicon/favicon-16x16.png"
-/>
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
 <link rel="manifest" href="/favicon/site.webmanifest" />
 
 {/* Font preloads */}
-<link
-  rel="preload"
-  href="/fonts/Satoshi-Variable.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-/>
+<link rel="preload" href="/fonts/Satoshi-Variable.ttf" as="font" type="font/ttf" crossorigin />
 <link
   rel="preload"
   href="/fonts/Satoshi-VariableItalic.ttf"
@@ -116,12 +90,9 @@ const socialImageURL = new URL(
   /* User script*/
   prod && (
     <script>
-      console.log( '%c Astro Theme Pure %c
-      https://github.com/cworld1/astro-theme-pure/',
-      'color:#fff;background:linear-gradient(90deg,#448bff,#44e9ff);padding:5px
-      0;',
-      'color:#000;background:linear-gradient(90deg,#44e9ff,#ffffff);padding:5px
-      10px 5px 0px;' )
+      console.log( '%c Astro Theme Pure %c https://github.com/cworld1/astro-theme-pure/',
+      'color:#fff;background:linear-gradient(90deg,#448bff,#44e9ff);padding:5px 0;',
+      'color:#000;background:linear-gradient(90deg,#44e9ff,#ffffff);padding:5px 10px 5px 0px;' )
     </script>
   )
 }

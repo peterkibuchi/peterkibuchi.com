@@ -3,6 +3,8 @@
 
 /** @type { PrettierConfig | SortImportsConfig } */
 export default {
+  printWidth: 100,
+
   plugins: ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-astro"],
   importOrderParserPlugins: ["decorators-legacy", "jsx", "typescript"],
   importOrder: [

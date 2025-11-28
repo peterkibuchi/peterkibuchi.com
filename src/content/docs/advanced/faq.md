@@ -20,10 +20,7 @@ It should be used with `inferSize: true` to get the image size. Example:
 
 ```yaml
 heroImage:
-  {
-    src: "https://img.tukuppt.com/ad_preview/00/15/09/5e715a320b68e.jpg!/fw/980",
-    inferSize: true,
-  }
+  { src: "https://img.tukuppt.com/ad_preview/00/15/09/5e715a320b68e.jpg!/fw/980", inferSize: true }
 ```
 
 ## Vite

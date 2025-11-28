@@ -49,10 +49,7 @@ const {
     {/* Set highlight color */}
     <style define:vars={{ highlightColor }}>
       :global(.highlight) {
-        color: var(
-          --highlightColor,
-          hsl(var(--primary) / var(--un-text-opacity))
-        ) !important;
+        color: var(--highlightColor, hsl(var(--primary) / var(--un-text-opacity))) !important;
       }
       :global(.highlight-bg) {
         background-color: var(

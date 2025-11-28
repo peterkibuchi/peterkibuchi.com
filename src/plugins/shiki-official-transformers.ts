@@ -26,9 +26,7 @@ function createCommentNotationTransformer(
   return {
     name,
     code(code) {
-      const lines = code.children.filter(
-        (i) => i.type === "element",
-      ) as Element[];
+      const lines = code.children.filter((i) => i.type === "element") as Element[];
       const linesToRemove: (Element | Text)[] = [];
       lines.forEach((line, idx) => {
         let nodeToRemove: Element | undefined;
@@ -57,15 +55,13 @@ function createCommentNotationTransformer(
             linesToRemove.push(line);
             if (removeEmptyLines) {
               const next = code.children[code.children.indexOf(line) + 1];
-              if (next && next.type === "text" && next.value === "\n")
-                linesToRemove.push(next);
+              if (next && next.type === "text" && next.value === "\n") linesToRemove.push(next);
             }
           }
         }
       });
 
-      for (const line of linesToRemove)
-        code.children.splice(code.children.indexOf(line), 1);
+      for (const line of linesToRemove) code.children.splice(code.children.indexOf(line), 1);
     },
   };
 }
@@ -155,10 +151,7 @@ export interface TransformerNotationHighlightOptions {
 export function transformerNotationHighlight(
   options: TransformerNotationHighlightOptions = {},
 ): ShikiTransformer {
-  const {
-    classActiveLine = "highlighted",
-    classActivePre = "has-highlighted",
-  } = options;
+  const { classActiveLine = "highlighted", classActivePre = "has-highlighted" } = options;
 
   return transformerNotationMap(
     {

@@ -82,9 +82,7 @@ const {
       pathLengths.set(path, length);
 
       const customDuration = path.getAttribute("data-duration");
-      const duration = customDuration
-        ? parseInt(customDuration, 10)
-        : defaultDuration;
+      const duration = customDuration ? parseInt(customDuration, 10) : defaultDuration;
       pathDurations.set(path, duration);
 
       path.style.strokeDasharray = `${length} ${length}`;
