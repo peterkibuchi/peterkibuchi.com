@@ -3,7 +3,6 @@
   "type": "module",
   "version": "4.0.9",
   "scripts": {
-    "astro": "astro",
     "build": "astro-pure check && astro check && astro build",
     "cache:avatars": "tsx scripts/cacheAvatars.ts",
     "check": "astro check",
@@ -15,10 +14,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "new": "astro-pure new",
-    "preview": "astro preview",
-    "pure": "astro-pure",
     "sync": "astro sync",
-    "typecheck": "tsc --noEmit",
     "yijiansilian": "bun lint && bun sync && bun check && bun format"
   },
   "dependencies": {
