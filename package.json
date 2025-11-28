@@ -3,20 +3,23 @@
   "type": "module",
   "version": "4.0.9",
   "scripts": {
+    "astro": "astro",
+    "build": "astro-pure check && astro check && astro build",
+    "cache:avatars": "tsx scripts/cacheAvatars.ts",
+    "check": "astro check",
+    "clean": "rm -rf .astro .vercel dist",
     "dev": "astro dev",
     "dev:check": "astro check --watch & astro dev",
-    "build": "astro-pure check && astro check && astro build",
-    "preview": "astro preview",
-    "sync": "astro sync",
-    "check": "astro check",
-    "astro": "astro",
-    "pure": "astro-pure",
+    "format:check": "prettier --check \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\" --cache",
+    "format:write": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\" --cache",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "new": "astro-pure new",
-    "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,astro}'",
-    "lint": "eslint --fix 'src/**/*.{js,ts,jsx,tsx,astro}'",
-    "yijiansilian": "bun lint && bun sync && bun check && bun format",
-    "clean": "rm -rf .astro .vercel dist",
-    "cache:avatars": "tsx scripts/cacheAvatars.ts"
+    "preview": "astro preview",
+    "pure": "astro-pure",
+    "sync": "astro sync",
+    "typecheck": "tsc --noEmit",
+    "yijiansilian": "bun lint && bun sync && bun check && bun format"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
@@ -33,10 +36,10 @@
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
-    "@typescript-eslint/parser": "^8.46.3",
     "eslint": "^9.39.1",
     "eslint-plugin-astro": "^1.5.0",
     "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript-eslint": "^8.48.0"
   }
 }

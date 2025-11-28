@@ -1,15 +1,38 @@
-// @ts-check
+import eslintPluginAstro from "eslint-plugin-astro";
+import { defineConfig } from "eslint/config";
+import tseslint from "typescript-eslint";
 
-import eslintPluginAstro from 'eslint-plugin-astro'
-
-export default [
-  ...eslintPluginAstro.configs.recommended,
-  // Ignore files
+export default defineConfig(
   {
-    ignores: ['public/scripts/*', 'scripts/*', '.astro/', 'src/env.d.ts'],
+    ignores: [".astro/", "public/scripts/*", "scripts/*", "src/env.d.ts"],
+  },
+  {
+    files: ["**/*.astro", "**/*.ts", "**/*.tsx"],
+    extends: [
+      ...eslintPluginAstro.configs.recommended,
+      ...tseslint.configs.recommended,
+      ...tseslint.configs.recommendedTypeChecked,
+      ...tseslint.configs.stylisticTypeChecked,
+    ],
     rules: {
-      // override/add rules settings here, such as:
-      // "astro/no-set-html-directive": "error"
-    }
-  }
-]
+      "@typescript-eslint/array-type": "off",
+      "@typescript-eslint/consistent-type-definitions": "off",
+      "@typescript-eslint/consistent-type-imports": [
+        "warn",
+        { prefer: "type-imports", fixStyle: "inline-type-imports" },
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ],
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        { checksVoidReturn: { attributes: false } },
+      ],
+    },
+  },
+  {
+    linterOptions: { reportUnusedDisableDirectives: true },
+    languageOptions: { parserOptions: { projectService: true } },
+  },
+);

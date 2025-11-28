@@ -1,39 +1,47 @@
-### Astro ###
-dist/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# astro
 .astro/
+dist/
 
-### Vercel ###
-.vercel/
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-### Vim ###
-[._]*.un~
+# testing
+/coverage
 
-### VisualStudioCode ###
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+# next.js
+/.next/
+/out/
+next-env.d.ts
 
-# Code workspace files
-*.code-workspace
+# production
+/build
 
-### Node ###
-# logs
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# dependencies
-node_modules/
-
-# environment variables
+# local env files
+# do not commit any .env files to git, except for the .env.example file. https://create.t3.gg/en/usage/env-variables#using-environment-variables
 .env
-.env.production
+.env*.local
 
-### Custom ###
-.DS_Store
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# custom
 old_blog
 ignore.*
 bunfig.toml
