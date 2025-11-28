@@ -2,6 +2,11 @@
   "name": "astro-theme-pure",
   "type": "module",
   "version": "4.0.9",
+  "lint-staged": {
+    "*.{astro,js,jsx,ts,tsx,md,mdx}": [
+      "prettier --write --cache"
+    ]
+  },
   "scripts": {
     "build": "astro-pure check && astro check && astro build",
     "cache:avatars": "tsx scripts/cacheAvatars.ts",
@@ -14,6 +19,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "new": "astro-pure new",
+    "prepare": "husky",
     "sync": "astro sync",
     "yijiansilian": "bun lint && bun sync && bun check && bun format"
   },
@@ -34,6 +40,8 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "eslint": "^9.39.1",
     "eslint-plugin-astro": "^1.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "typescript-eslint": "^8.48.0"
