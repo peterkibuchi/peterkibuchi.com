@@ -109,10 +109,9 @@ const typographyConfig: TypographyOptions = {
     "tbody tr:last-child": { "border-bottom-width": "0" },
     "thead th": { "font-weight": "500", color: fg },
     "td, th": { border: "inherit", "text-align": "start", padding: "0.57em" },
-    "thead th:first-child,thead th:first-child,tbody td:first-child,tfoot td:first-child":
-      {
-        "padding-inline-start": "0",
-      },
+    "thead th:first-child,thead th:first-child,tbody td:first-child,tfoot td:first-child": {
+      "padding-inline-start": "0",
+    },
     // List
     "ol, ul": { "padding-inline-start": "1.625em" },
     "ol>li, ul>li": { "padding-inline-start": ".375em" },

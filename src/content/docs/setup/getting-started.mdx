@@ -13,8 +13,8 @@ Two way to install. "Template" way is lightweight and simple, but hard to update
 ### Install Using Template
 
 <Aside type="tip">
-  Astro has a great article teaching you setting up project: [Install and set up
-  Astro #Use a theme or starter
+  Astro has a great article teaching you setting up project: [Install and set up Astro #Use a theme
+  or starter
   template](https://docs.astro.build/en/install-and-setup/#use-a-theme-or-starter-template)
 </Aside>
 
@@ -24,20 +24,22 @@ Two way to install. "Template" way is lightweight and simple, but hard to update
 
    Execute the following command in the your user directory to install the theme:
 
-   <Tabs>
+      <Tabs>
 <TabItem label='bun'>
+
 ```shell
 bun create astro@latest --template cworld1/astro-theme-pure
 ```
+
 <Aside type='tip'>
 For Bun, if the installation is slow, it is recommended to use a mirror configuration by creating `bunfig.toml` under the project root directory:
 
-   ```toml title="bunfig.toml"
-   [install]
-   registry = "<npm mirror site>"
-   ```
+```toml title="bunfig.toml"
+[install]
+registry = "<npm mirror site>"
+```
 
-   For details about other PM mirror configs, you may need to see their official documents.
+For details about other PM mirror configs, you may need to see their official documents.
 
    </Aside>
 </TabItem>
@@ -58,7 +60,7 @@ npm create astro@latest -- --template cworld1/astro-theme-pure
 </TabItem>
 </Tabs>
 
-   By default, this command will use the template repository’s main branch. To use a different branch name, pass it as part of the `--template` argument: `cworld1/astro-theme-pure#<branch>`.
+By default, this command will use the template repository’s main branch. To use a different branch name, pass it as part of the `--template` argument: `cworld1/astro-theme-pure#<branch>`.
 
 2. Answer the questions and follow the instructions of the CLI wizard.
 
@@ -161,8 +163,7 @@ The theme file structure is as follows:
 3. Change the site favicon.
 
    <Aside type="tip">
-     [Favicon.io](https://favicon.io/) is a great tool that can help you
-     generate favicons quickly.
+     [Favicon.io](https://favicon.io/) is a great tool that can help you generate favicons quickly.
    </Aside>
 
    Replace the `public/favicon/*` files with your own favicon.

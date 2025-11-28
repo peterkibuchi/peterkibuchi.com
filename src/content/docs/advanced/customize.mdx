@@ -81,7 +81,8 @@ import type { SiteMeta } from "astro-pure/types";
      Header,
      ThemeProvider,
      ThemeProvider,
-   } from "astro-pure/components/basic"; // [!code --]
+   } from "astro-pure/components/basic";
+   // [!code --]
 
    // [!code ++]
    import { Footer } from "@/components/custom/Footer.astro"; // [!code ++]
@@ -98,9 +99,8 @@ Then you've done a "localization" of the component.
 
 <Aside type="danger" title={"Use at Your Own Risk".toUpperCase()}>
   Keep cautious for change the underlying code{" "}
-  <Spoiler>~~底层代码不可突破，祖宗之法不可变~~</Spoiler>, unless you know what
-  you are doing. You should know and accept any risks & difficulties for making
-  project complex.
+  <Spoiler>~~底层代码不可突破，祖宗之法不可变~~</Spoiler>, unless you know what you are doing. You
+  should know and accept any risks & difficulties for making project complex.
 </Aside>
 
 If you want to make some breaking changes or just make a test, this method may follow "what you see is what you get".

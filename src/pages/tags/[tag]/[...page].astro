@@ -3,11 +3,7 @@ import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 
 import { Paginator, PostPreview } from "astro-pure/components/pages";
-import {
-  getBlogCollection,
-  getUniqueTags,
-  sortMDByDate,
-} from "astro-pure/server";
+import { getBlogCollection, getUniqueTags, sortMDByDate } from "astro-pure/server";
 import { Button } from "astro-pure/user";
 import PageLayout from "@/layouts/BaseLayout.astro";
 import config from "@/site-config";
@@ -20,9 +16,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   const uniqueTags = getUniqueTags(allPostsByDate);
 
   return uniqueTags.flatMap((tag) => {
-    const filterPosts = allPostsByDate.filter((post) =>
-      post.data.tags.includes(tag),
-    );
+    const filterPosts = allPostsByDate.filter((post) => post.data.tags.includes(tag));
     return paginate(filterPosts, {
       pageSize: config.content.blogPageSize,
       params: { tag },

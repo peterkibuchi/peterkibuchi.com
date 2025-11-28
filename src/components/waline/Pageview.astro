@@ -14,9 +14,7 @@ import config from "@/site-config";
 >
   async function loadPageview() {
     try {
-      const pageview = await import(
-        `${npmCDN}/@waline/client@v3/dist/pageview.js`
-      );
+      const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`);
       const el = document.querySelector(".waline-pageview-count");
       if (el) {
         pageview.pageviewCount({

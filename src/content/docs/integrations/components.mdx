@@ -9,8 +9,8 @@ import { Aside, MdxRepl, TabItem, Tabs } from "astro-pure/user";
 Components let you easily reuse a piece of UI or styling consistently. You can use them not just in `.astro` files, but also in `.mdx` files.
 
 <Aside type="tip">
-  [MDX](https://mdxjs.com/) is a format that lets you write JSX embedded inside
-  Markdown. And it has no difference with markdown files in other ways.
+  [MDX](https://mdxjs.com/) is a format that lets you write JSX embedded inside Markdown. And it has
+  no difference with markdown files in other ways.
 </Aside>
 
 For `.astro`, you can directly import and use components and use. An example will also shown in the first section.
@@ -79,9 +79,7 @@ import { Card } from 'astro-pure/user'
 <MdxRepl>
 import { Collapse } from 'astro-pure/user'
 
-<Collapse title="Lorem ipsum">
-  Lorem ipsum dolor sit amet, vidit suscipit at mei.
-</Collapse>
+<Collapse title="Lorem ipsum">Lorem ipsum dolor sit amet, vidit suscipit at mei.</Collapse>
 <Collapse title="Lorem ipsum">
   <div slot="before" class="mt-2">
     Are you sure you want to see?
@@ -311,13 +309,7 @@ import { Button } from 'astro-pure/user'
 
 <div class="flex gap-x-2">
   <Button as="div" title="Simple" />
-  <Button
-    as="a"
-    href="#button"
-    title="Link style"
-    variant="ahead"
-    class="not-prose"
-  />
+  <Button as="a" href="#button" title="Link style" variant="ahead" class="not-prose" />
   <Button as="div" title="Back" variant="back" />
   <Button as="div" title="Pill style" variant="pill" />
   <Button as="div" variant="pill">
@@ -361,10 +353,7 @@ import { Spoiler } from 'astro-pure/user'
 <MdxRepl>
 import { FormattedDate } from 'astro-pure/user'
 
-<FormattedDate
-  date={new Date("2021-08-01")}
-  dateTimeOptions={{ month: "short" }}
-/>
+<FormattedDate date={new Date("2021-08-01")} dateTimeOptions={{ month: "short" }} />
 
 <Fragment slot='desc'>
   ```jsx
@@ -444,8 +433,8 @@ Single use: <Icon name='rss' class='inline' />
 
 Preview all icons available (click button to copy):
 
-import { Icons as allIcons } from 'astro-pure/libs'
-import { Button } from 'astro-pure/user'
+import { Icons as allIcons } from "astro-pure/libs";
+import { Button } from "astro-pure/user";
 
   <div class='flex flex-wrap gap-2'>
   {

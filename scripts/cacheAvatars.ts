@@ -126,11 +126,7 @@ async function cacheFriendAvatar(friend: Friend) {
     ? path.join(avatarOutputDir, `${hash}.${expectedExt}`)
     : undefined;
 
-  if (
-    existingCache?.hash === hash &&
-    potentialFile &&
-    (await ensureFileExists(potentialFile))
-  ) {
+  if (existingCache?.hash === hash && potentialFile && (await ensureFileExists(potentialFile))) {
     // Ensure the cache path stays normalised even if the JSON was edited manually
     const normalisedPath = `/avatars/${hash}.${expectedExt}`;
     const mutated = existingCache.path !== normalisedPath;
@@ -143,10 +139,7 @@ async function cacheFriendAvatar(friend: Friend) {
 
   try {
     const response = await fetchWithTimeout(friend.avatar, 10_000);
-    const extension = resolveExtension(
-      friend.avatar,
-      response.headers.get("content-type"),
-    );
+    const extension = resolveExtension(friend.avatar, response.headers.get("content-type"));
     const fileName = `${hash}.${extension}`;
     const targetPath = path.join(avatarOutputDir, fileName);
 

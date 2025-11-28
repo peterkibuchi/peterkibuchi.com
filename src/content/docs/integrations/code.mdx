@@ -122,9 +122,7 @@ function draw(t,c) { ctx.fillStyle=c; ctx.fillRect(t%sz*sz+1,~~(t/sz)*sz+1,sz-2,
   </head>
   <body style="overflow:hidden">
     <!-- Highlight a single line -->
-    <p style="text-align:center">
-      君指先跃动の光は、私の一生不変の信仰に、唯私の超电磁炮永生き！
-    </p>
+    <p style="text-align:center">君指先跃动の光は、私の一生不変の信仰に、唯私の超电磁炮永生き！</p>
     <!-- [\!code highlight] -->
 
     <!-- You can also highlight multiple lines with a single comment: -->
@@ -144,11 +142,7 @@ function draw(t,c) { ctx.fillStyle=c; ctx.fillRect(t%sz*sz+1,~~(t/sz)*sz+1,sz-2,
         ctx = document.getElementById("can").getContext("2d"),
         sz = 20;
       onkeydown = (e) =>
-        (fx =
-          sn[1] - sn[0] ==
-          (n = [-1, -20, 1, 20][(e || event).keyCode - 37] || fx)
-            ? fx
-            : n);
+        (fx = sn[1] - sn[0] == (n = [-1, -20, 1, 20][(e || event).keyCode - 37] || fx) ? fx : n);
       function draw(t, c) {
         ctx.fillStyle = c;
         ctx.fillRect((t % sz) * sz + 1, ~~(t / sz) * sz + 1, sz - 2, sz - 2);
