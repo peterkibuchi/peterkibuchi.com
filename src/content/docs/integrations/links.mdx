@@ -1,10 +1,10 @@
 ---
-title: 'Friend Links'
-description: 'Configurations for friend links'
+title: "Friend Links"
+description: "Configurations for friend links"
 order: 4
 ---
 
-import { Steps } from 'astro-pure/user'
+import { Steps } from "astro-pure/user";
 
 ## Remove Links Page
 
@@ -18,9 +18,9 @@ Set `links.enable` to `false` in `src/site.config.ts`:
 export const integ: IntegrationUserConfig = {
   // ...
   links: {
-    enable: false // [!code highlight]
-  }
-}
+    enable: false, // [!code highlight]
+  },
+};
 ```
 
 And also, remember to delete the following folders & files:
@@ -38,21 +38,24 @@ export const integ: IntegrationUserConfig = {
   links: {
     // Friend logbook
     logbook: [
-      { date: '2025-03-16', content: 'Is there a leakage?' },
-      { date: '2025-03-16', content: 'A leakage of what?' },
-      { date: '2025-03-16', content: 'I have a full seat of water, like, full of water!' },
-      { date: '2025-03-16', content: 'Must be the water.' },
-      { date: '2025-03-16', content: 'Let\'s add that to the words of wisdom.' },
+      { date: "2025-03-16", content: "Is there a leakage?" },
+      { date: "2025-03-16", content: "A leakage of what?" },
+      {
+        date: "2025-03-16",
+        content: "I have a full seat of water, like, full of water!",
+      },
+      { date: "2025-03-16", content: "Must be the water." },
+      { date: "2025-03-16", content: "Let's add that to the words of wisdom." },
     ],
     // Yourself link info
     applyTip: {
       name: theme.title,
-      desc: theme.description || 'Null',
-      url: 'https://astro-pure.js.org/',
-      avatar: 'https://astro-pure.js.org/favicon/favicon.ico'
-    }
+      desc: theme.description || "Null",
+      url: "https://astro-pure.js.org/",
+      avatar: "https://astro-pure.js.org/favicon/favicon.ico",
+    },
   },
-}
+};
 ```
 
 ## Friend Links
@@ -66,13 +69,14 @@ The friend links configurations are at `public/links.json`.
       "id_name": "cf-links",
       "desc": "Common links included in circle friends",
       "link_list": [
-        { // [!code highlight:6]
+        {
+          // [!code highlight:6]
           "name": "Elysia",
           "intro": "Hi, did you miss me? Anywhere and anytime, Elysia will return all your expectations.",
           "link": "https://honkaiimpact3.fandom.com/wiki/Elysia",
           "avatar": "https://0.gravatar.com/avatar/"
           // Here you can also leave some other fields as notes
-        },
+        }
       ]
     },
     {
@@ -107,9 +111,9 @@ This theme has not integrated it and will not provide support for it in the futu
 
    ```yaml title="config.yaml"
    spider_settings:
-      enable: true
-      json_url: "<your-site>/links.json" # [!code highlight]
-      article_count: 4
+     enable: true
+     json_url: "<your-site>/links.json" # [!code highlight]
+     article_count: 4
    ```
 
 3. Go to "Actions" page and run workflow "Friend Circle Lite" manually to check if it works. This will also generate server files in "page" branch.
@@ -125,31 +129,31 @@ This theme has not integrated it and will not provide support for it in the futu
    ```astro title="src/components/pages/links/index.astro"
    ---
    const headings = [
-      // ...
-      { depth: 2, slug: 'small-circle', text: 'Small Circle' }, // [!code highlight]
-   ]
+     // ...
+     { depth: 2, slug: "small-circle", text: "Small Circle" }, // [!code highlight]
+   ];
    ---
 
    <PageLayout>
-      {/* ... */}
-      <!-- [!code highlight:16] -->
-      <h2 id='small-circle'>Small Circle</h2>
-      <div id='friend-circle-lite-root' class='not-prose'>Loading...</div>
-      <script>
-         import '@/assets/styles/fc.css'
+     {/* ... */}
+     <!-- [!code highlight:16] -->
+     <h2 id="small-circle">Small Circle</h2>
+     <div id="friend-circle-lite-root" class="not-prose">Loading...</div>
+     <script>
+       import "@/assets/styles/fc.css";
 
-         import { FriendCircle } from '@/plugins/friendCircle'
+       import { FriendCircle } from "@/plugins/friendCircle";
 
-         const fc = new FriendCircle()
-         fc.init({
-            private_api_url: '<your-fc-lite-server>',
-            page_turning_number: 10,
-            error_img: 'https://cravatar.cn/avatar/57d8260dfb55501c37dde588e7c3852c'
-         })
-         fc.load()
-      </script>
+       const fc = new FriendCircle();
+       fc.init({
+         private_api_url: "<your-fc-lite-server>",
+         page_turning_number: 10,
+         error_img:
+           "https://cravatar.cn/avatar/57d8260dfb55501c37dde588e7c3852c",
+       });
+       fc.load();
+     </script>
    </PageLayout>
    ```
 
 </Steps>
-

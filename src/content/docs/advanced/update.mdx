@@ -1,14 +1,14 @@
 ---
-title: 'Update Theme'
-description: 'Update astro theme pure to the latest version'
+title: "Update Theme"
+description: "Update astro theme pure to the latest version"
 order: 1
 ---
 
-import { Aside } from 'astro-pure/user'
+import { Aside } from "astro-pure/user";
 
-<Aside type='caution'>
-  This theme is updated frequently, and updating the theme may be a little bit complex. Please read
-  the following breaking changes carefully.
+<Aside type="caution">
+  This theme is updated frequently, and updating the theme may be a little bit
+  complex. Please read the following breaking changes carefully.
 </Aside>
 
 ## Breaking Changes
@@ -31,20 +31,22 @@ No breaking changes.
   ```ts title="src/site.config.ts"
   export const theme: ThemeUserConfig = {
     content: {
-      externalLinksContent: ' ↗', // [!code --]
+      externalLinksContent: " ↗", // [!code --]
       /** External links configuration */ // [!code ++]
-      externalLinks: { // [!code ++]
-        content: ' ↗', // [!code ++]
+      externalLinks: {
+        // [!code ++]
+        content: " ↗", // [!code ++]
         /** Properties for the external links element */ // [!code ++]
-        properties: { // [!code ++]
-          style: 'user-select:none' // [!code ++]
-        } // [!code ++]
+        properties: {
+          // [!code ++]
+          style: "user-select:none", // [!code ++]
+        }, // [!code ++]
       }, // [!code ++]
       /** Blog page size for pagination (optional) */
       blogPageSize: 8,
-      externalLinkArrow: true // show external link arrow // [!code --]
-    }
-  }
+      externalLinkArrow: true, // show external link arrow // [!code --]
+    },
+  };
   ```
 
   - Changed the Waline files out of package! Checkout [Commit 5119694](https://github.com/cworld1/astro-theme-pure/commit/5119694ab3e32b600887dca30650bcbc63da3f7b) to see how to change your existing pages & layouts. Don't forget to copy files at `src/components/waline` to your project.
@@ -64,20 +66,21 @@ No breaking changes.
   ```ts title="src/site.config.ts"
   export const theme: ThemeUserConfig = {
     footer: {
-      links: [ // [!code highlight:12]
+      links: [
+        // [!code highlight:12]
         {
-          title: 'Moe ICP 114514',
-          link: 'https://icp.gov.moe/?keyword=114514',
-          style: 'text-sm' // Uno/TW CSS class
+          title: "Moe ICP 114514",
+          link: "https://icp.gov.moe/?keyword=114514",
+          style: "text-sm", // Uno/TW CSS class
         },
         {
-          title: 'Site Policy',
-          link: '/terms/list',
-          pos: 2 // position set to 2 will be appended to copyright line
-        }
-      ]
-    }
-  }
+          title: "Site Policy",
+          link: "/terms/list",
+          pos: 2, // position set to 2 will be appended to copyright line
+        },
+      ],
+    },
+  };
   ```
 
 ### v4.0.2-beta
@@ -89,14 +92,17 @@ No breaking changes.
   export const integ: IntegrationUserConfig = {
     links: {
       applyTip: [
-        { name: 'Name', val: theme.title }, // [!code highlight:4]
-        { name: 'Desc', val: theme.description || 'Null' },
-        { name: 'Link', val: 'https://astro-pure.js.org/' },
-        { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
+        { name: "Name", val: theme.title }, // [!code highlight:4]
+        { name: "Desc", val: theme.description || "Null" },
+        { name: "Link", val: "https://astro-pure.js.org/" },
+        {
+          name: "Avatar",
+          val: "https://astro-pure.js.org/favicon/favicon.ico",
+        },
         // You can also add more fields
-      ]
-    }
-  }
+      ],
+    },
+  };
   ```
 
 - Add the env variable `BUN_LINK_PKG`. Set this to `true` to automatically refer to the package `astro-pure` in the path `packages/pure` instead of `node_modules/astro-pure`. This may help users develop the theme or change code for themselves (not recommended for production).
@@ -131,17 +137,18 @@ No breaking changes.
 - Move all components, types and utils that are reused to new npm packages `astro-pure`. Affected components are included in . Import method is also changed:
 
   ```ts
-  import { Button } from '@/components/user' // [!code --]
-  import { Button } from 'astro-pure/user' // [!code ++]
+  import { Button } from "astro-pure/user"; // [!code ++]
+  import { Button } from "@/components/user"; // [!code --]
   ```
 
 - New format config file `src/site.config.ts`. There will be zod schema to validate the config file, and use of config will be changed to:
 
   ```ts
-  import { siteConfig } from '@/site-config' // [!code --]
-  import config from '@/site-config' // [!code ++]
+  // [!code ++]
   // Or if you want to use the config that is after processed or transformed
-  import config from 'virtual:config' // [!code ++]
+  import config from "virtual:config"; // [!code ++]
+
+  import config, { siteConfig } from "@/site-config"; // [!code --]
   ```
 
 - Built-in astro config supported. package `astro-pure` will automatically config some integrations like `unocss/astro`, `@astrojs/mdx`, `@astrojs/sitemap`, also with some rehypePlugins and remarkPlugins.
@@ -169,8 +176,8 @@ No breaking changes.
 - Move user components to `src/components/user`. Affected components are included in [User Components](/docs/integrations/components). Import method is also changed:
 
   ```ts
-  import Button from '@/components/Button' // [!code --]
-  import { Button } from 'astro-pure/user' // [!code ++]
+  import { Button } from "astro-pure/user"; // [!code ++]
+  import Button from "@/components/Button"; // [!code --]
   ```
 
 - Replace `remark-github-blockquote-alert` plugin to component `Aside`. Check [User Components #Aside](/docs/integrations/components#aside) to know how to migrate.

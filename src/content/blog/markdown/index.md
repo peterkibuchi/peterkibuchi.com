@@ -1,11 +1,11 @@
 ---
 title: Markdown Syntax Support
 publishDate: 2023-07-26 08:00:00
-description: 'Markdown is a lightweight markup language.'
+description: "Markdown is a lightweight markup language."
 tags:
   - Markdown
-heroImage: { src: './thumbnail.jpg', color: '#B4C6DA' }
-language: 'English'
+heroImage: { src: "./thumbnail.jpg", color: "#B4C6DA" }
+language: "English"
 ---
 
 ## Basic Syntax
@@ -64,9 +64,9 @@ This is an `inline code`
 ```js
 // calculate fibonacci
 function fibonacci(n) {
-  if (n <= 1) return 1
-  const result = fibonacci(n - 1) + fibonacci(n - 2) // [\!code --]
-  return fibonacci(n - 1) + fibonacci(n - 2) // [\!code ++]
+  if (n <= 1) return 1;
+  const result = fibonacci(n - 1) + fibonacci(n - 2); // [\!code --]
+  return fibonacci(n - 1) + fibonacci(n - 2); // [\!code ++]
 }
 ```
 ````
@@ -76,9 +76,9 @@ Preview:
 ```js
 // calculate fibonacci
 function fibonacci(n) {
-  if (n <= 1) return 1
-  const result = fibonacci(n - 1) + fibonacci(n - 2) // [!code --]
-  return fibonacci(n - 1) + fibonacci(n - 2) // [!code ++]
+  if (n <= 1) return 1;
+  const result = fibonacci(n - 1) + fibonacci(n - 2); // [!code --]
+  return fibonacci(n - 1) + fibonacci(n - 2); // [!code ++]
 }
 ```
 

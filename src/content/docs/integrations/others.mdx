@@ -1,9 +1,9 @@
 ---
-title: 'Other Integrations'
-description: 'Other integrations that help improve your site'
+title: "Other Integrations"
+description: "Other integrations that help improve your site"
 ---
 
-import { Aside, Tabs, TabItem, Steps } from 'astro-pure/user'
+import { Aside, Steps, TabItem, Tabs } from "astro-pure/user";
 
 <Aside>Docs are still in progress.</Aside>
 
@@ -17,12 +17,12 @@ export const integ: IntegrationUserConfig = {
   // A lightbox library that can add zoom effect
   mediumZoom: {
     enable: true, // disable it will not load the whole library
-    selector: '.prose .zoomable',
+    selector: ".prose .zoomable",
     options: {
-      className: 'zoomable'
-    }
-  }
-}
+      className: "zoomable",
+    },
+  },
+};
 ```
 
 This theme has integrated it in `BlogPost.astro` by default, which means any content in `src/content/blog` doesn't need to import. If you want to use it in any other layout or page, you can use the following code:
@@ -63,7 +63,6 @@ import { MediumZoom } from 'astro-pure/advanced'
 </TabItem>
 </Tabs>
 
-
 ## `@playform/compress`
 
 Checkout [playform/compress](https://github.com/PlayForm/Compress) for more.
@@ -93,16 +92,16 @@ Rendering LaTeX in Astro.js enriches your markdown files with mathematical expre
    Modify your Astro configuration to use these plugins. Add the plugins to the markdown configuration section in your astro.config.mjs:
 
    ```js title="astro.config.mjs"
-   import { defineConfig } from 'astro/config';
-   import remarkMath from 'remark-math';
-   import rehypeKatex from 'rehype-katex';
+   import { defineConfig } from "astro/config";
+   import rehypeKatex from "rehype-katex";
+   import remarkMath from "remark-math";
 
    export default defineConfig({
-      // ...
-      markdown: {
-         remarkPlugins: [remarkMath],
-         rehypePlugins: [rehypeKatex],
-      },
+     // ...
+     markdown: {
+       remarkPlugins: [remarkMath],
+       rehypePlugins: [rehypeKatex],
+     },
    });
    ```
 
@@ -112,7 +111,7 @@ Rendering LaTeX in Astro.js enriches your markdown files with mathematical expre
 
    ```astro title="src/layouts/BlogPost.astro"
    ---
-   import 'katex/dist/katex.min.css'
+   import "katex/dist/katex.min.css";
    ---
    ```
 
@@ -120,9 +119,13 @@ Rendering LaTeX in Astro.js enriches your markdown files with mathematical expre
 
    ```astro title="src/layouts/BlogPost.astro"
    ---
-   import config from '@/site-config'
+   import config from "@/site-config";
    ---
-   <link rel="stylesheet" href={`${config.npmCDN}/katex@0.16.15/dist/katex.min.css`}>
+
+   <link
+     rel="stylesheet"
+     href={`${config.npmCDN}/katex@0.16.15/dist/katex.min.css`}
+   />
    ```
 
 4. Some CSS code is recommended:
@@ -154,7 +157,7 @@ Rendering LaTeX in Astro.js enriches your markdown files with mathematical expre
 Common Pitfalls and Solutions:
 
 - CSS Styling Issues
-  
+
   Problem: LaTeX formulas might not render with the correct styles if the KaTeX CSS isn’t loaded.
 
   Solution: Confirm the KaTeX stylesheet link is correctly placed in the HTML head and is loading without issues. Check for network errors or restrictions that might prevent the CSS from loading.

@@ -1,6 +1,6 @@
 ---
-title: 'Configuration'
-description: 'Configuration files'
+title: "Configuration"
+description: "Configuration files"
 order: 4
 ---
 

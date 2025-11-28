@@ -1,10 +1,10 @@
 ---
-title: 'Customize Theme'
-description: 'Custom theme by yourself'
+title: "Customize Theme"
+description: "Custom theme by yourself"
 order: 2
 ---
 
-import { Aside, Spoiler, Steps } from 'astro-pure/user'
+import { Aside, Spoiler, Steps } from "astro-pure/user";
 
 ## You Should Know
 
@@ -32,20 +32,21 @@ Let's make an example to customize the `Footer` component:
 <Steps>
 1. Search the `Footer` in your project code:
 
-   ```astro title="src/layout/BaseLayout.astro"
-   ---
-   import { Footer, Header, ThemeProvider } from 'astro-pure/components/basic'
-   import type { SiteMeta } from 'astro-pure/types'
-   // ...
-   ---
-   ```
+```astro title="src/layout/BaseLayout.astro"
+---
+import { Footer, Header, ThemeProvider } from "astro-pure/components/basic";
+import type { SiteMeta } from "astro-pure/types";
+
+// ...
+---
+```
 
 2. Find it in theme source code:
 
    ```ts title="node_modules/astro-theme-pure/components/basic/index.ts"
-   export { default as Footer } from './Footer.astro'
-   export { default as Header } from './Header.astro'
-   export { default as ThemeProvider } from './ThemeProvider.astro'
+   export { default as Footer } from "./Footer.astro";
+   export { default as Header } from "./Header.astro";
+   export { default as ThemeProvider } from "./ThemeProvider.astro";
    ```
 
    Then you get the `Footer` component source code at `node_modules/astro-theme-pure/components/basic/Footer.astro`.
@@ -60,10 +61,12 @@ Let's make an example to customize the `Footer` component:
 
    ```astro title="src/components/custom/Footer.astro"
    ---
-   import config from 'virtual:config'
+   import config from "virtual:config";
 
-   import { Icon } from '../user' // [!code --]
-   import { Icon } from 'astro-pure/user' // [!code ++]
+   import { Icon } from "astro-pure/user"; // [!code ++]
+
+   import { Icon } from "../user"; // [!code --]
+
    // ...
    ---
    ```
@@ -71,13 +74,21 @@ Let's make an example to customize the `Footer` component:
 5. Change the reference in `BaseLayout.astro`:
 
    ```astro title="src/layout/BaseLayout.astro"
-    ---
-    import { Footer, Header, ThemeProvider } from 'astro-pure/components/basic' // [!code --]
-    import { Header, ThemeProvider } from 'astro-pure/components/basic' // [!code ++]
-    import { Footer } from '@/components/custom/Footer.astro' // [!code ++]
-    // ...
-    ---
-    ```
+   ---
+   import {
+     Footer,
+     Header,
+     Header,
+     ThemeProvider,
+     ThemeProvider,
+   } from "astro-pure/components/basic"; // [!code --]
+
+   // [!code ++]
+   import { Footer } from "@/components/custom/Footer.astro"; // [!code ++]
+
+   // ...
+   ---
+   ```
 
 </Steps>
 
@@ -85,8 +96,11 @@ Then you've done a "localization" of the component.
 
 ## Package mode
 
-<Aside type='danger' title={'Use at Your Own Risk'.toUpperCase()}>
-Keep cautious for change the underlying code <Spoiler>~~底层代码不可突破，祖宗之法不可变~~</Spoiler>, unless you know what you are doing. You should know and accept any risks & difficulties for making project complex.
+<Aside type="danger" title={"Use at Your Own Risk".toUpperCase()}>
+  Keep cautious for change the underlying code{" "}
+  <Spoiler>~~底层代码不可突破，祖宗之法不可变~~</Spoiler>, unless you know what
+  you are doing. You should know and accept any risks & difficulties for making
+  project complex.
 </Aside>
 
 If you want to make some breaking changes or just make a test, this method may follow "what you see is what you get".
@@ -99,4 +113,5 @@ If you want to make some breaking changes or just make a test, this method may f
 For bun user, please refer to [Deployment#Package Mode](/docs/setup/deployment#package-mode)
 
 This can also help you correctly build your project on cloud CI/CD.
+
 </Aside>

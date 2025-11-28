@@ -1,30 +1,35 @@
 ---
 // https://waline.js.org/en/guide/features/pageview.html#use-alone
-import config from '@/site-config'
+import config from "@/site-config";
 ---
 
 <script
   is:inline
-  type='module'
+  type="module"
   data-astro-rerun
-  define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
+  define:vars={{
+    npmCDN: config.npmCDN,
+    walineServer: config.integ.waline.server,
+  }}
 >
   async function loadPageview() {
     try {
-      const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
-      const el = document.querySelector('.waline-pageview-count')
+      const pageview = await import(
+        `${npmCDN}/@waline/client@v3/dist/pageview.js`
+      );
+      const el = document.querySelector(".waline-pageview-count");
       if (el) {
         pageview.pageviewCount({
           serverURL: walineServer,
-          path: window.location.pathname
-        })
+          path: window.location.pathname,
+        });
       }
     } catch (e) {
-      console.error('Failed to load Waline pageview:', e)
+      console.error("Failed to load Waline pageview:", e);
     }
   }
 
-  const abort = await loadPageview()
+  const abort = await loadPageview();
   // After 500ms, if the network request has not been completed, cancel this operation
-  setTimeout(() => abort(), 500)
+  setTimeout(() => abort(), 500);
 </script>

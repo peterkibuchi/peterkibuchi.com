@@ -1,6 +1,6 @@
 ---
-title: 'UnoCSS & Styles'
-description: 'Change the appearance of the site & create custom styles'
+title: "UnoCSS & Styles"
+description: "Change the appearance of the site & create custom styles"
 order: 6
 ---
 
@@ -21,10 +21,10 @@ And the same way to change the default font family, you can modify the following
 ```css title="src/assets/styles/app.css"
 :root {
   /* ... */
-  font-family: 'Satoshi'; /* [!code --] */
-  src: url('/fonts/Satoshi-Variable.ttf'); /* [!code --] */
-  font-family: '<Your favorite font family>'; /* [!code ++] */
-  src: url('/fonts/<Your favorite font>.ttf'); /* [!code ++] */
+  font-family: "Satoshi"; /* [!code --] */
+  src: url("/fonts/Satoshi-Variable.ttf"); /* [!code --] */
+  font-family: "<Your favorite font family>"; /* [!code ++] */
+  src: url("/fonts/<Your favorite font>.ttf"); /* [!code ++] */
 }
 ```
 
@@ -48,8 +48,8 @@ const typographyConfig = {
   // prettier-ignore
   cssExtend: { // [!code highlight:3]
     // ...
-  }
-}
+  },
+};
 ```
 
 But if you want to customize the typography by UnoCSS, or just change the preset typography theme, you can do it in `src/site.config.ts`:
@@ -58,9 +58,9 @@ But if you want to customize the typography by UnoCSS, or just change the preset
 export const integ: IntegrationUserConfig = {
   // ...
   typography: {
-    class: 'prose text-base text-muted-foreground' // [!code highlight]
-  }
-}
+    class: "prose text-base text-muted-foreground", // [!code highlight]
+  },
+};
 ```
 
 Checkout [Typography preset](https://unocss.dev/presets/typography) for more.

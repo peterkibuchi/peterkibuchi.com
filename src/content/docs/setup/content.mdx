@@ -1,10 +1,10 @@
 ---
-title: 'Authoring Content'
-description: 'Making your own content'
+title: "Authoring Content"
+description: "Making your own content"
 order: 2
 ---
 
-import { Aside } from 'astro-pure/user'
+import { Aside } from "astro-pure/user";
 
 Astro helps you [author and present your content](https://docs.astro.build/en/guides/content/). You can write a blog post directly in Astro using Markdown/MDX, or fetch your content from a headless CMS. Astro lets you build a site around your content: you can add a layout to your pages, create an index of posts, and set up an RSS feed to allow readers to subscribe.
 
@@ -29,15 +29,20 @@ Let's give you example of [writing Markdown content in Astro](https://docs.astro
 
 ```markdown title="src/content/blog/first-article.md"
 ---
-title: 'First Article' # (Required, max 60)
-description: 'I like writing articles.' # (Required, 10 to 160)
-publishDate: '2024-11-30 00:08:00' # (Required, Date)
+title: "First Article" # (Required, max 60)
+description: "I like writing articles." # (Required, 10 to 160)
+publishDate: "2024-11-30 00:08:00" # (Required, Date)
 tags:
   - Markdown # (Also can write format like next line)
-heroImage: { src: './thumbnail.jpg', alt: 'an image targetting my article', color: '#B4C6DA' }
+heroImage:
+  {
+    src: "./thumbnail.jpg",
+    alt: "an image targetting my article",
+    color: "#B4C6DA",
+  }
 # thumbnail.jpg should be in the same folder as the article
 draft: false # (set true will only show in development)
-language: 'English' # (String as you like)
+language: "English" # (String as you like)
 comment: true # (set false will disable comment, even if you've enabled it in site-config)
 ---
 
@@ -122,7 +127,7 @@ Astro pages use the `.astro` file extension and support the same features as [As
 
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
     <title>My Homepage</title>
   </head>
@@ -140,13 +145,13 @@ And in this theme, luckly you can use `BaseLayout.astro` as your layout componen
 
 ```astro title="src/pages/mypage.astro"
 ---
-import PageLayout from '@/layouts/BaseLayout.astro' // [!code highlight]
+import PageLayout from "@/layouts/BaseLayout.astro"; // [!code highlight]
 
 const meta = {
-  title: 'My Page',
-  description: 'My fav page'
-}
-const highlightColor = '#44AEF6' // Optional
+  title: "My Page",
+  description: "My fav page",
+};
+const highlightColor = "#44AEF6"; // Optional
 ---
 
 <PageLayout {meta} {highlightColor}>
@@ -156,8 +161,9 @@ const highlightColor = '#44AEF6' // Optional
 <!-- [!code highlight] -->
 ```
 
-<Aside type='tip'>
-  Read more about [layout components](https://docs.astro.build/en/basics/layouts/) in Astro.
+<Aside type="tip">
+  Read more about [layout
+  components](https://docs.astro.build/en/basics/layouts/) in Astro.
 </Aside>
 
 ### Markdown/MDX Pages
@@ -178,13 +184,13 @@ This theme supports a good layout for `.md` and `.mdx` files:
 
 ```markdown title="src/pages/terms/privacy.md"
 ---
-layout: '@/layouts/IndividualPage.astro'
+layout: "@/layouts/IndividualPage.astro"
 
-title: 'Privacy Policy'
-description: 'Effective date: 2024-11-26'
-language: 'En' # optional
-back: '/terms/list' # optional, default to '/'
-heroImage: { src: './thumbnail.jpg' } # will used to social-image
+title: "Privacy Policy"
+description: "Effective date: 2024-11-26"
+language: "En" # optional
+back: "/terms/list" # optional, default to '/'
+heroImage: { src: "./thumbnail.jpg" } # will used to social-image
 ---
 
 ## Privacy Policy 1

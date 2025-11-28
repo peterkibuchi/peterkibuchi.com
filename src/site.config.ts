@@ -1,37 +1,42 @@
-import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } from 'astro-pure/types'
+import type {
+  CardListData,
+  Config,
+  IntegrationUserConfig,
+  ThemeUserConfig,
+} from "astro-pure/types";
 
 export const theme: ThemeUserConfig = {
   // === Basic configuration ===
   /** Title for your website. Will be used in metadata and as browser tab title. */
-  title: 'Astro Theme Pure',
+  title: "Astro Theme Pure",
   /** Will be used in index page & copyright declaration */
-  author: 'Pure Lab',
+  author: "Pure Lab",
   /** Description metadata for your website. Can be used in page metadata. */
-  description: 'Stay hungry, stay foolish',
+  description: "Stay hungry, stay foolish",
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
-  favicon: '/favicon/favicon.ico',
+  favicon: "/favicon/favicon.ico",
   /** Specify the default language for this site. */
   locale: {
-    lang: 'en-US',
-    attrs: 'en_US',
+    lang: "en-US",
+    attrs: "en_US",
     // Date locale
-    dateLocale: 'en-US',
+    dateLocale: "en-US",
     dateOptions: {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric'
-    }
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    },
   },
   /** Set a logo image to show in the homepage. */
   logo: {
-    src: 'src/assets/avatar.png',
-    alt: 'Avatar'
+    src: "src/assets/avatar.png",
+    alt: "Avatar",
   },
 
   // === Global configuration ===
-  titleDelimiter: '•',
+  titleDelimiter: "•",
   prerender: true,
-  npmCDN: 'https://cdn.jsdelivr.net/npm',
+  npmCDN: "https://cdn.jsdelivr.net/npm",
 
   // Still in test
   head: [
@@ -47,12 +52,12 @@ export const theme: ThemeUserConfig = {
   /** Configure the header of your site. */
   header: {
     menu: [
-      { title: 'Blog', link: '/blog' },
-      { title: 'Docs', link: '/docs' },
-      { title: 'Projects', link: '/projects' },
-      { title: 'Links', link: '/links' },
-      { title: 'About', link: '/about' }
-    ]
+      { title: "Blog", link: "/blog" },
+      { title: "Docs", link: "/docs" },
+      { title: "Projects", link: "/projects" },
+      { title: "Links", link: "/links" },
+      { title: "About", link: "/about" },
+    ],
   },
 
   /** Configure the footer of your site. */
@@ -63,43 +68,43 @@ export const theme: ThemeUserConfig = {
     links: [
       // Registration link
       {
-        title: 'Moe ICP 114514',
-        link: 'https://icp.gov.moe/?keyword=114514',
-        style: 'text-sm' // Uno/TW CSS class
+        title: "Moe ICP 114514",
+        link: "https://icp.gov.moe/?keyword=114514",
+        style: "text-sm", // Uno/TW CSS class
       },
       {
-        title: 'Travelling',
-        link: 'https://www.travellings.cn/go.html',
-        style: 'text-sm'
+        title: "Travelling",
+        link: "https://www.travellings.cn/go.html",
+        style: "text-sm",
       },
       // Privacy Policy link
       {
-        title: 'Site Policy',
-        link: '/terms/list',
-        pos: 2 // position set to 2 will be appended to copyright line
-      }
+        title: "Site Policy",
+        link: "/terms/list",
+        pos: 2, // position set to 2 will be appended to copyright line
+      },
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/cworld1/astro-theme-pure' }
+    social: { github: "https://github.com/cworld1/astro-theme-pure" },
   },
 
   content: {
     /** External links configuration */
     externalLinks: {
-      content: ' ↗',
+      content: " ↗",
       /** Properties for the external links element */
       properties: {
-        style: 'user-select:none'
-      }
+        style: "user-select:none",
+      },
     },
     /** Blog page size for pagination (optional) */
     blogPageSize: 8,
     // Currently support weibo, x, bluesky
-    share: ['weibo', 'x', 'bluesky']
-  }
-}
+    share: ["weibo", "x", "bluesky"],
+  },
+};
 
 export const integ: IntegrationUserConfig = {
   // Links management
@@ -107,21 +112,24 @@ export const integ: IntegrationUserConfig = {
   links: {
     // Friend logbook
     logbook: [
-      { date: '2025-03-16', content: 'Is there a leakage?' },
-      { date: '2025-03-16', content: 'A leakage of what?' },
-      { date: '2025-03-16', content: 'I have a full seat of water, like, full of water!' },
-      { date: '2025-03-16', content: 'Must be the water.' },
-      { date: '2025-03-16', content: "Let's add that to the words of wisdom." }
+      { date: "2025-03-16", content: "Is there a leakage?" },
+      { date: "2025-03-16", content: "A leakage of what?" },
+      {
+        date: "2025-03-16",
+        content: "I have a full seat of water, like, full of water!",
+      },
+      { date: "2025-03-16", content: "Must be the water." },
+      { date: "2025-03-16", content: "Let's add that to the words of wisdom." },
     ],
     // Yourself link info
     applyTip: [
-      { name: 'Name', val: theme.title },
-      { name: 'Desc', val: theme.description || 'Null' },
-      { name: 'Link', val: 'https://astro-pure.js.org/' },
-      { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
+      { name: "Name", val: theme.title },
+      { name: "Desc", val: theme.description || "Null" },
+      { name: "Link", val: "https://astro-pure.js.org/" },
+      { name: "Avatar", val: "https://astro-pure.js.org/favicon/favicon.ico" },
     ],
     // Cache avatars in `public/avatars/` to improve user experience.
-    cacheAvatar: false
+    cacheAvatar: false,
   },
   // Enable page search function
   pagefind: true,
@@ -137,69 +145,70 @@ export const integ: IntegrationUserConfig = {
     // server: 'https://api.quotable.io/quotes/random?maxLength=60',
     // target: `(data) => data[0].content || 'Error'`
     // DummyJSON
-    server: 'https://dummyjson.com/quotes/random',
-    target: `(data) => (data.quote.length > 80 ? \`\${data.quote.slice(0, 80)}...\` : data.quote || 'Error')`
+    server: "https://dummyjson.com/quotes/random",
+    target: `(data) => (data.quote.length > 80 ? \`\${data.quote.slice(0, 80)}...\` : data.quote || 'Error')`,
   },
   // UnoCSS typography
   // See: https://unocss.dev/presets/typography
   typography: {
-    class: 'prose text-base',
+    class: "prose text-base",
     // The style of blockquote font, normal or italic (default to italic in typography)
-    blockquoteStyle: 'italic',
+    blockquoteStyle: "italic",
     // The style of inline code block, code or modern (default to code in typography)
-    inlineCodeBlockStyle: 'modern'
+    inlineCodeBlockStyle: "modern",
   },
   // A lightbox library that can add zoom effect
   // See: https://astro-pure.js.org/docs/integrations/others#medium-zoom
   mediumZoom: {
     enable: true, // disable it will not load the whole library
-    selector: '.prose .zoomable',
+    selector: ".prose .zoomable",
     options: {
-      className: 'zoomable'
-    }
+      className: "zoomable",
+    },
   },
   // Comment system
   waline: {
     enable: true,
     // Server service link
-    server: 'https://astro-theme-pure-waline.arthals.ink/',
+    server: "https://astro-theme-pure-waline.arthals.ink/",
     // Refer https://waline.js.org/en/guide/features/emoji.html
-    emoji: ['bmoji', 'weibo'],
+    emoji: ["bmoji", "weibo"],
     // Refer https://waline.js.org/en/reference/client/props.html
     additionalConfigs: {
       // search: false,
       pageview: true,
       comment: true,
       locale: {
-        reaction0: 'Like',
-        placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)'
+        reaction0: "Like",
+        placeholder:
+          "Welcome to comment. (Email to receive replies. Login is unnecessary)",
       },
-      imageUploader: false
-    }
-  }
-}
+      imageUploader: false,
+    },
+  },
+};
 
 export const terms: CardListData = {
-  title: 'Terms content',
+  title: "Terms content",
   list: [
     {
-      title: 'Privacy Policy',
-      link: '/terms/privacy-policy'
+      title: "Privacy Policy",
+      link: "/terms/privacy-policy",
     },
     {
-      title: 'Terms and Conditions',
-      link: '/terms/terms-and-conditions'
+      title: "Terms and Conditions",
+      link: "/terms/terms-and-conditions",
     },
     {
-      title: 'Copyright',
-      link: '/terms/copyright'
+      title: "Copyright",
+      link: "/terms/copyright",
     },
     {
-      title: 'Disclaimer',
-      link: '/terms/disclaimer'
-    }
-  ]
-}
+      title: "Disclaimer",
+      link: "/terms/disclaimer",
+    },
+  ],
+};
 
-const config = { ...theme, integ } as Config
-export default config
+const config = { ...theme, integ } as Config;
+export default config;

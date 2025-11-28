@@ -1,16 +1,16 @@
 ---
-title: 'Comment System'
-description: 'Comment system for pages at the bottom'
+title: "Comment System"
+description: "Comment system for pages at the bottom"
 order: 3
 ---
 
-import { Aside } from 'astro-pure/user'
+import { Aside } from "astro-pure/user";
 
 ## Waline Comment System
 
 <Aside>
-  This theme has integrated the Waline comment system. You can configure it at the
-  `integrationConfig.waline` in file `src/site.config.ts`.
+  This theme has integrated the Waline comment system. You can configure it at
+  the `integrationConfig.waline` in file `src/site.config.ts`.
 </Aside>
 
 The theme's comment, read statistics, likes, and other functionalities are all provided by [Waline](https://waline.js.org/).
@@ -27,9 +27,9 @@ Remove it by the following steps:
    export const integ: IntegrationUserConfig = {
      // ...
      waline: {
-       enable: false // [!code highlight]
-     }
-   }
+       enable: false, // [!code highlight]
+     },
+   };
    ```
 
 2. Remove dependency `@waline/client`:
@@ -64,17 +64,17 @@ export const integ: IntegrationUserConfig = {
   waline: {
     enable: true,
     // Server service link
-    server: 'https://astro-theme-pure-waline.arthals.ink/', // [!code highlight]
+    server: "https://astro-theme-pure-waline.arthals.ink/", // [!code highlight]
     // Refer https://waline.js.org/en/guide/features/emoji.html
-    emoji: ['bmoji', 'weibo'],
+    emoji: ["bmoji", "weibo"],
     // Refer https://waline.js.org/en/reference/client/props.html
     additionalConfigs: {
       pageview: true,
-      comment: true
+      comment: true,
       // ...
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### Usage
@@ -82,7 +82,7 @@ export const integ: IntegrationUserConfig = {
 You can call it manually in `.astro` or `.mdx` files.
 
 ```jsx
-import { Comment } from '@/components/waline'
+import { Comment } from "@/components/waline";
 
 // prettier-ignore
 <Comment />
@@ -90,6 +90,6 @@ import { Comment } from '@/components/waline'
 
 Render:
 
-import { Comment } from '@/components/waline'
+import { Comment } from "@/components/waline";
 
 <Comment />

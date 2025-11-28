@@ -1,17 +1,16 @@
 ---
-title: 'Advanced Components'
-description: 'Advanced components with advanced docs'
+title: "Advanced Components"
+description: "Advanced components with advanced docs"
 order: 2
 ---
 
-import { MdxRepl } from 'astro-pure/user'
+import { MdxRepl } from "astro-pure/user";
 
 ## Web Content Render
 
 ### Quote
 
 The `Quote` component is a simple component that displays a random quote.
-
 
 <MdxRepl>
 import { Quote } from 'astro-pure/advanced'
@@ -34,10 +33,10 @@ export const integ: IntegrationUserConfig = {
   // Add a random quote to the footer (default on homepage footer)
   quote: {
     // https://github.com/lukePeavey/quotable
-    server: 'https://api.quotable.io/quotes/random?maxLength=60', // [!code highlight:2]
-    target: `(data) => data[0].content || 'Error'`
-  }
-}
+    server: "https://api.quotable.io/quotes/random?maxLength=60", // [!code highlight:2]
+    target: `(data) => data[0].content || 'Error'`,
+  },
+};
 ```
 
 [Quotable](https://github.com/lukePeavey/quotable) is a open-source API that provides random English quotes.
@@ -48,10 +47,10 @@ For Chinese quotes, you can use [Hitokoto](https://developer.hitokoto.cn/sentenc
 export const integ: IntegrationUserConfig = {
   quote: {
     // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
-    server: 'https://v1.hitokoto.cn/?c=i', // [!code highlight:2]
-    target: `(data) => data.hitokoto || 'Error'`
-  }
-}
+    server: "https://v1.hitokoto.cn/?c=i", // [!code highlight:2]
+    target: `(data) => data.hitokoto || 'Error'`,
+  },
+};
 ```
 
 ### GitHub Card
@@ -61,7 +60,7 @@ The `GithubCard` component is a simple component that displays a GitHub user car
 <MdxRepl width='80%'>
 import { GithubCard } from 'astro-pure/advanced'
 
-<GithubCard repo='cworld1/astro-theme-pure' />
+<GithubCard repo="cworld1/astro-theme-pure" />
 
 <Fragment slot='desc'>
 ```jsx
@@ -79,8 +78,8 @@ Preview any link inserted in the content.
 <MdxRepl width='80%'>
 import { LinkPreview } from 'astro-pure/advanced'
 
-<LinkPreview href='https://www.mozilla.org/en-US/' />
-<LinkPreview href='https://www.cloudflare.com/' hideMedia />
+<LinkPreview href="https://www.mozilla.org/en-US/" />
+<LinkPreview href="https://www.cloudflare.com/" hideMedia />
 
 <Fragment slot='desc'>
 ```jsx
@@ -102,14 +101,16 @@ import { LinkPreview } from 'astro-pure/advanced'
 import { QRCode } from 'astro-pure/advanced'
 
 <QRCode
-  content='https://github.com/cworld1/astro-theme-pure'
-  class='inline-flex max-w-44 p-3 bg-muted rounded-lg border' />
+  content="https://github.com/cworld1/astro-theme-pure"
+  class="inline-flex max-w-44 p-3 bg-muted rounded-lg border"
+/>
 
 <Fragment slot='desc'>
 ```jsx
 import { QRCode } from 'astro-pure/advanced'
 
 // <QRCode /> // default to render current page link
+
 <QRCode
   content='https://github.com/cworld1/astro-theme-pure'
   class='inline-flex max-w-44 p-3 bg-muted rounded-lg border' />

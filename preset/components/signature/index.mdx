@@ -1,4 +1,4 @@
-import { MdxRepl } from 'astro-pure/user'
+import { MdxRepl } from "astro-pure/user";
 
 # Signature
 
@@ -33,12 +33,12 @@ By default, the component loads the SVG file from `src/assets/signature.svg`. Pl
 
 You can pass the following props when using the component to customize its animation behavior:
 
-| Prop              | Type                         | Description                                                  | Default Value |
-| ----------------- | ---------------------------- | ------------------------------------------------------------ | ------------- |
+| Prop              | Type                         | Description                                                                                                                 | Default Value |
+| ----------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `mode`            | `'loop'` \| `'once-on-view'` | Animation mode. `loop`: continuously draws and rolls back; `once-on-view`: plays the animation once it enters the viewport. | `'loop'`      |
-| `drawDelay`       | `number`                     | (Loop mode) The delay in milliseconds before drawing the next path. | `200`         |
-| `rollbackDelay`   | `number`                     | (Loop mode) The delay in milliseconds before rolling back the previous path. | `80`          |
-| `loopPause`       | `number`                     | (Loop mode) The pause duration in milliseconds at the end of each full cycle. | `2000`        |
-| `threshold`       | `number`                     | (On-view mode) The visibility threshold (from 0.0 to 1.0) to trigger the animation. | `1.0`         |
-| `defaultDuration` | `number`                     | The default animation duration in milliseconds for each stroke. | `600`         |
-| `class`           | `string`                     | Additional CSS classes to be added to the component's root element. | `undefined`   |
+| `drawDelay`       | `number`                     | (Loop mode) The delay in milliseconds before drawing the next path.                                                         | `200`         |
+| `rollbackDelay`   | `number`                     | (Loop mode) The delay in milliseconds before rolling back the previous path.                                                | `80`          |
+| `loopPause`       | `number`                     | (Loop mode) The pause duration in milliseconds at the end of each full cycle.                                               | `2000`        |
+| `threshold`       | `number`                     | (On-view mode) The visibility threshold (from 0.0 to 1.0) to trigger the animation.                                         | `1.0`         |
+| `defaultDuration` | `number`                     | The default animation duration in milliseconds for each stroke.                                                             | `600`         |
+| `class`           | `string`                     | Additional CSS classes to be added to the component's root element.                                                         | `undefined`   |

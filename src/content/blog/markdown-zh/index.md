@@ -1,11 +1,11 @@
 ---
 title: Markdown 语法支持
 publishDate: 2023-07-26 08:00:00
-description: 'Markdown 是一种轻量级的「标记语言」。'
+description: "Markdown 是一种轻量级的「标记语言」。"
 tags:
   - Markdown
-heroImage: { src: './thumbnail.jpg', color: '#B4C6DA' }
-language: '中文'
+heroImage: { src: "./thumbnail.jpg", color: "#B4C6DA" }
+language: "中文"
 ---
 
 ## 基本语法
@@ -72,8 +72,8 @@ _斜体文本_
 ```js
 // calculate fibonacci
 function fibonacci(n) {
-  if (n <= 1) return 1
-  return fibonacci(n - 1) + fibonacci(n - 2)
+  if (n <= 1) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
 ```
 ````
@@ -83,8 +83,8 @@ function fibonacci(n) {
 ```js
 // calculate fibonacci
 function fibonacci(n) {
-  if (n <= 1) return 1
-  return fibonacci(n - 1) + fibonacci(n - 2)
+  if (n <= 1) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
 ```
 

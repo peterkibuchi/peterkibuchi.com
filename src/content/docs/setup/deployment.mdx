@@ -1,10 +1,10 @@
 ---
-title: 'Deployment'
-description: 'Deploy your site to various platforms'
+title: "Deployment"
+description: "Deploy your site to various platforms"
 order: 3
 ---
 
-import { Aside, Steps } from 'astro-pure/user'
+import { Aside, Steps } from "astro-pure/user";
 
 ## Package Mode
 
@@ -60,21 +60,21 @@ bun add '@astrojs/node'
 Then follow the comments in `astro.config.ts` and modify like:
 
 ```ts title="astro.config.ts"
-import node from '@astrojs/node' // [!code ++]
-import vercelServerless from '@astrojs/vercel/serverless' // [!code --]
+import node from "@astrojs/node"; // [!code ++]
+import vercelServerless from "@astrojs/vercel/serverless"; // [!code --]
 
 export default defineConfig({
   //   ...
   adapter: vercelServerless(), // [!code --]
-  adapter: node({ mode: 'standalone' }), // [!code ++]
+  adapter: node({ mode: "standalone" }), // [!code ++]
 
   integrations: [
     // prettier-ignore
     outputCopier({ // [!code --]
       integ: ['sitemap', 'pagefind'] // [!code --]
-    }) // [!code --]
-  ]
-})
+    }), // [!code --]
+  ],
+});
 ```
 
 ### Bun server
@@ -88,13 +88,13 @@ Check [@nurodev/astro-bun](https://www.npmjs.com/package/@nurodev/astro-bun) for
 Remove all server adapter configuration in `astro.config.ts`:
 
 ```ts title="astro.config.ts"
-import vercelServerless from '@astrojs/vercel/serverless' // [!code --]
+import vercelServerless from "@astrojs/vercel/serverless"; // [!code --]
 
 export default defineConfig({
   //   ...
   adapter: vercelServerless(), // [!code --]
-  output: 'server' // [!code --]
-})
+  output: "server", // [!code --]
+});
 ```
 
 ### GitHub Pages
@@ -119,8 +119,8 @@ carefully.
    ```ts title="astro.config.ts"
    export default defineConfig({
      //   ...
-     base: '/repo-name/' // Replace with your repository name
-   })
+     base: "/repo-name/", // Replace with your repository name
+   });
    ```
 
 2. Update all internal links in Dynamic script files:
